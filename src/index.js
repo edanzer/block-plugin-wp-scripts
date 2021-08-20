@@ -1,32 +1,12 @@
-import { registerBlockType } from '@wordpress/blocks';
-import { useBlockProps } from '@wordpress/block-editor';
+/**
+ * Gutenberg Blocks
+ *
+ * All blocks related JavaScript files should be imported here.
+ * Create a folder for each block that contains block-specific files.
+ *
+ * All blocks should be included here since this is the file that
+ * Webpack is compiling as the input file.
+ */
 
-const blockStyle = {
-    backgroundColor: '#900',
-    color: '#fff',
-    padding: '20px',
-};
- 
-registerBlockType( 'bpws/test-block', {
-    apiVersion: 2,
-    title: 'Test Block',
-    icon: 'universal-access-alt',
-    category: 'design',
-    example: {},
-    edit() {
-        const blockProps = useBlockProps( { style: blockStyle } );
- 
-        return (
-            <div { ...blockProps }>Hello World (from the editor).</div>
-        );
-    },
-    save() {
-        const blockProps = useBlockProps.save( { style: blockStyle } );
- 
-        return (
-            <div { ...blockProps }>
-                Hello World (from the frontend).
-            </div>
-        );
-    },
-} );
+import './blocks/simple-block';
+import './blocks/advanced-block';
